@@ -1,0 +1,398 @@
+/* default styles of the entire document */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+@font-face {
+    font-family: 'Gambetta-Medium';
+    src: url('../fonts/Gambetta-Medium.woff2') format('woff2'),
+         url('../fonts/Gambetta-Medium.woff') format('woff'),
+         url('../fonts/Gambetta-Medium.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gambarino-Regular';
+    src: url('../fonts/Gambarino-Regular.woff2') format('woff2'),
+         url('../fonts/Gambarino-Regular.woff') format('woff'),
+         url('../fonts/Gambarino-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Switzer-Regular';
+    src: url('../fonts/Switzer-Regular.woff2') format('woff2'),
+         url('../fonts/Switzer-Regular.woff') format('woff'),
+         url('../fonts/Switzer-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+    background-color: #7f4f24;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-family: 'Gambetta-Medium', serif;
+    text-align: center;
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 3.5rem;
+    letter-spacing: 1px;
+}
+
+/* Nav bar */
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 2rem;
+    background-color: #b6ad90;
+    border-radius: 5px;
+    overflow: visible;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    height: 100%;
+}
+
+.nav-links li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    font-family: 'Gambarino-Regular', serif;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(34, 17, 2, 0.6);
+    color: white;
+}
+
+/* logo styles */
+.logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    height: 170px; 
+    width: auto;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Slideshow styles */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #c2c5aa80; 
+    z-index: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.8);
+}
+
+/* Fade animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+/* Booking button */
+.booking-btn {
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; 
+}
+
+.booking-btn a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #7f4f24;
+    color: white;
+    font-family: 'Gambarino-Regular', serif;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.booking-btn a:hover {
+    background-color: #b6ad90;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.second-content {
+    height: 0%;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    transition: all 0.4s;
+    font-size: 0;
+    transform: rotate(90deg) scale(-1);
+    padding: 1rem;
+    text-align: center;
+}
+
+.second-content p {
+    color: white;
+    font-family: 'Switzer-Regular', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+/* Mission Section Styles */
+.mission-section {
+    background-color: #656d4a;
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.mission-heading {
+    font-family: 'Gambarino-Regular', serif;
+    color: #ffffff;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mission-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mission-text p {
+    font-family: 'Switzer-Regular', sans-serif;
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section Styles */
+.contact-section {
+    background-color: #403d39;
+    padding: 6rem 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.contact-heading {
+    font-family: 'Gambarino-Regular', serif;
+    color: #ffffff;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 320px;
+}
+
+/* Horizontal Social Links Styles */
+.social-links-horizontal {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.social-links-horizontal a {
+    font-family: 'Switzer-Regular', sans-serif;
+    color: #ffffff;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.social-links-horizontal a:hover {
+    color: #b6ad90;
+    transform: translateY(-2px);
+}
+
+/* Form Styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form .input-span {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="tel"],
+.form textarea {
+    border-radius: 0.5rem;
+    padding: 0.8rem 0.75rem;
+    width: 100%;
+    border: none;
+    background-color: rgba(182, 173, 144, 0.1);
+    outline: 2px solid #7f4f24;
+    color: #ffffff;
+    font-family: 'Switzer-Regular', sans-serif;
+    font-size: 0.9rem;
+}
+
+.form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.label {
+    align-self: flex-start;
+    color: #b6ad90;
+    font-weight: 600;
+    font-family: 'Switzer-Regular', sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+/* SUBMIT BUTTON */
+.form .submit {   
+    padding: 0.8rem 0.75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3rem;
+    background-color: #7f4f24;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
+    font-family: 'Gambarino-Regular', serif;
+    letter-spacing: 1px;
+}
+
+.form .submit:hover {
+    background-color: #b6ad90;
+    color: #7f4f24;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Copyright Styles */
+.copyright {
+    background-color: #403d39;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.copyright p {
+    font-family: 'Switzer-Regular', sans-serif;
+    color: #ffffff;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}

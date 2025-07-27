@@ -1,0 +1,288 @@
+/* Fixed header styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 100px; 
+}
+
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #b6ad90;
+    z-index: 9999; 
+    padding: 0;
+}
+
+/* Navbar styles */
+.header-fixed .navbar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    background-color: #b6ad90;
+    position: relative;
+    height: 100px;
+}
+
+/* Logo styles */
+.header-fixed .logo {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header-fixed .logo img {
+    height: 170px;
+    width: auto;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Navigation links */
+.header-fixed .nav-links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-fixed .nav-links a {
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Founders Section Styles */
+.founders-section {
+    padding: 6rem 2rem;
+    background-color: #f5f5f5;
+}
+
+/* Our founders heading */
+.founders-heading {
+    text-align: center;
+    font-family: 'Gambarino-Regular', serif;
+    font-size: 3rem;
+    color: #7f4f24;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.founder-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem 0;
+}
+
+.founder-container.reverse {
+    flex-direction: row-reverse;
+}
+
+.founder-image {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+}
+
+.founder-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center 90%;
+    border-radius: 10px;
+}
+
+.founder-image img[src*="Daksh"] {
+    object-position: center 75%;
+}
+
+/* Individual image adjustments */
+.founder-container:first-child .founder-image img {
+    object-position: center 60%;
+}
+
+.founder-container:last-child .founder-image img {
+    object-position: center 10%;
+}
+
+.founder-content {
+    flex: 1;
+}
+
+.founder-name {
+    font-family: 'Gambarino-Regular', serif;
+    font-size: 2rem;
+    color: #7f4f24;
+    margin-bottom: 1rem;
+}
+
+.founder-description {
+    font-family: 'Switzer-Regular', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+
+/* Our Story Section Styles */
+.story-section {
+    padding: 6rem 2rem;
+    background-color: #e8e6e1;
+}
+
+.story-heading {
+    text-align: center;
+    font-family: 'Gambarino-Regular', serif;
+    font-size: 3rem;
+    color: #7f4f24;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.timeline-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #7f4f24;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 3px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-item::after 
+{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: #b6ad90;
+    border: 4px solid #7f4f24;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item.right::after {
+    left: -16px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-year {
+    font-family: 'Gambarino-Regular', serif;
+    font-size: 1.5rem;
+    color: #7f4f24;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-text {
+    font-family: 'Switzer-Regular', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Add arrow to timeline content */
+.timeline-item.left .timeline-content::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    right: -15px;
+    border-width: 10px 0 10px 15px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+}
+
+.timeline-item.right .timeline-content::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+}
+
+
+/* Responsive Timeline */
+@media screen and (max-width: 768px) {
+    .timeline-container::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-item.right {
+        left: 0;
+    }
+    
+    .timeline-item.left::after,
+    .timeline-item.right::after {
+        left: 15px;
+    }
+    
+    .timeline-item.left .timeline-content::before,
+    .timeline-item.right .timeline-content::before {
+        left: -15px;
+        border-width: 10px 15px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+}
+
+/* Copyright Section */
+.copyright {
+    background-color: #7f4f24;
+    color: white;
+    text-align: center;
+    padding: 0.8rem;
+}
+
+.copyright p {
+    margin: 0;
+    font-family: 'Switzer-Regular', sans-serif;
+    font-size: 1rem;
+} 
